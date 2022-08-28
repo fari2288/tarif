@@ -14,8 +14,14 @@ function App() {
   return (
     <div className="App">
       {
-        tarifs.map((tarif)=>
-<Tarif title={tarif.title} price={tarif.price} speed={tarif.speed} text={tarif.text} isSelected={tarif.isSelected}/>
+        tarifs.map((tarif, index)=>
+<Tarif 
+    key={index}  
+    title={tarif.title} 
+    price={tarif.price} 
+    speed={tarif.speed} 
+    text={tarif.text} 
+    isSelected={tarif.isSelected}/>
         )
       }
     </div>

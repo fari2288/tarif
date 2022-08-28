@@ -1,9 +1,15 @@
-import './tarif.css'
+import './tarif.css';
+import { useState } from 'react';
 
 function Tarif(props) {
-    const {title, price, speed, text, isSelected}=props;
-    return (
-        <div className={"card "+ (isSelected?'selected':'')}>
+const {title, price, speed, text}=props;
+
+const [pressed, setPressed]= useState(false);
+const handleChange=()=>{
+setPressed(!pressed)
+}
+return (
+        <div onClick={handleChange} className={"card "+ (pressed?'selected':'')}>
         <div className="cardTitle">
 {title}
         </div>
@@ -17,6 +23,6 @@ function Tarif(props) {
 {text}
         </div>
         </div>
-    );
-    }
-    export default Tarif;
+);
+}
+export default Tarif;
